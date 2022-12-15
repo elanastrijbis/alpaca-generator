@@ -15,6 +15,32 @@ h1 {
   padding-bottom: 20px;
 }
 
+.nose {
+  position: absolute;
+}
+
 .hair {
+  position: absolute;
+}
+
+.neck {
+  position: absolute;
+}
+
+.mouth {
+  position: absolute;
+}
+
+.ears {
+  position: absolute;
+}
+
+.eyes {
+  position: absolute;
+}
+.leg {
+  position: absolute;
+}
+.accessories {
   position: absolute;
 }
