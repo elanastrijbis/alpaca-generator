@@ -6,10 +6,15 @@
 .container {
   display: flex;
   gap: 5rem;
+  position: relative;
 }
 
 h1 {
   font-size: 100px;
   margin: 0;
   padding-bottom: 20px;
+}
+
+.hair {
+  position: absolute;
 }

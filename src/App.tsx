@@ -21,27 +21,47 @@ import red70 from './assets/backgrounds/red70.png';
 import yellow50 from './assets/backgrounds/yellow50.png';
 import yellow60 from './assets/backgrounds/yellow60.png';
 import yellow70 from './assets/backgrounds/yellow70.png';
+import bang from './assets/hair/bang.png';
+import curls from './assets/hair/curls.png';
+import defaulthair from './assets/hair/default.png';
+import elegant from './assets/hair/elegant.png';
+import fancy from './assets/hair/fancy.png';
+import quiff from './assets/hair/quiff.png';
+import Hair from './components/Hair';
 
 function App() {
-  const [backgrounds, setBackgrounds] = useState<boolean>(false);
   const [background, setBackground] = useState(green50);
-
-  function showBackgrounds() {
-    setBackgrounds(!backgrounds);
-  }
+  const [hair, setHair] = useState(defaulthair);
 
   function handleBackgroundChange(color: string) {
     setBackground(color);
+  }
+
+  function handleHairChange(hairStyle: string) {
+    console.log('boo');
+    setHair(hairStyle);
+  }
+
+  const [options, setOptions] = useState(<Backgrounds handleBackgroundChange={handleBackgroundChange} />);
+
+  function changeOptionsTab(component: any) {
+    setOptions(component);
   }
 
   return (
     <div className={styles.app}>
       <h1>Alpaca Generator</h1>
       <div className={styles.container}>
-        <img src={background} alt="Blue background" />
+        <img src={background} alt="Background color" />
+        <img src={hair} alt="Hair style alpaca" className={styles.hair} />
         <div>
-          <Options heading="Accessorize the alpaca's" showBackgrounds={showBackgrounds} />
-          {backgrounds && <Backgrounds handleBackgroundChange={handleBackgroundChange} />}
+          <Options
+            heading="Accessorize the alpaca's"
+            changeOptionsTab={changeOptionsTab}
+            handleBackgroundChange={handleBackgroundChange}
+            handleHairChange={handleHairChange}
+          />
+          {options}
         </div>
       </div>
     </div>
