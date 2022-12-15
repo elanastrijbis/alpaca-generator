@@ -1,0 +1,31 @@
+.options {
+  margin-bottom: 40px;
+}
+
+.h2 {
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.btn {
+  border: 2px solid #a2c1ee;
+  background-color: white;
+  font-size: 30px;
+  border-radius: 20px;
+  padding: 5px 35px;
+  color: #a2c1ee;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #23509c;
+  color: #fff;
+  border: 2px solid #23509c;
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
